@@ -94,8 +94,19 @@ const Login = (props) => {
                             <span>Login</span>
                         </button>
                     </div>
+
+                    {message && (
+                        <div className="form-group">
+                            <div className="alert alert-danger" role='alert'>
+                                {message}
+                            </div>
+                        </div>
+                    )}
+                    <CheckButton style={{display:'none'}} ref={checkBtn}/>
                 </Form>
             </div>
         </div>
     )
 }
+
+export default Login

@@ -55,6 +55,10 @@ export const login = (username, password) => (dispatch) => {
                 error.toString()
 
                 dispatch({
+                    type: LOGIN_FAIL,
+                })
+                
+                dispatch({
                     type: SET_MESSAGE,
                     payload: message
                 })

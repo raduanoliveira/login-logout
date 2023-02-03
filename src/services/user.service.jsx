@@ -3,18 +3,22 @@ import authHeader from "./auth-header";
 
 const API_URL = 'http://localhost:8000/api/test'
 
-export const getPublicContent = () => {
+const getPublicContent = () => {
     return axios.get(API_URL + 'all')
 }
 
-export const getUserBoard = () => {
+const getUserBoard = () => {
     return axios.get(API_URL + 'user' , {headers: authHeader()})
 } 
 
-export const getModeratorBoard = () => {
+const getModeratorBoard = () => {
     return axios.get(API_URL + 'mod' , {headers: authHeader()})
 }
 
-export const getAdminBoard = () => {
+const getAdminBoard = () => {
     return axios.get(API_URL + 'admin', {headers: authHeader()})
 }
+
+const exportedObject = { getPublicContent, getUserBoard, getModeratorBoard, getAdminBoard}
+
+export default exportedObject
