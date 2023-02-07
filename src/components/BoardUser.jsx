@@ -7,9 +7,11 @@ const BoardUser = () => {
     useEffect(() => {
         UserService.getUserBoard().then(
             (response) => {
+                console.log('response', response)
                 setContent(response.data)
             },
             (error) => {
+                console.log('error :>> ', error);
                 const _content = (error.response && error.response.data) || error.message || error.toString()
 
                 setContent(_content)
